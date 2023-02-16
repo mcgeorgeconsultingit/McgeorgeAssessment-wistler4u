@@ -29,3 +29,9 @@ Enter a dummy detail and generate report.
 6. Create an API in the controller that all external platform can create, update course and other details
 
 Commit your final code to this repo when you are done.
+
+
+# Usage
+1. activate virtual environment and install requirements
+2. In the odoo-16.0 dir run the odoo-bin script
+3. To make external api call run the main.py script

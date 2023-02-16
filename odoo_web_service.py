@@ -2,11 +2,11 @@ import xmlrpc.client
 
 
 class CourseManger:
-    def __init__(self, url: str, db: str, username: str, password: str):
-        self.url = url or "http://0.0.0.0:8016"
-        self.db = db or "odoodb"
-        self.username = username or "odoouser"
-        self.password = password or "adminpassword"
+    def __init__(self, url: str="http://0.0.0.0:8016", db: str="odoodb", username: str = "odoouser", password: str= "adminpassword"):
+        self.url = url
+        self.db = db
+        self.username = username
+        self.password = password
         self.common = xmlrpc.client.ServerProxy(f"{self.url}/xmlrpc/2/common")
         self.models = xmlrpc.client.ServerProxy(f"{url}/xmlrpc/2/object")
         self.uid = self.common.authenticate(self.db, self.username, self.password, {})

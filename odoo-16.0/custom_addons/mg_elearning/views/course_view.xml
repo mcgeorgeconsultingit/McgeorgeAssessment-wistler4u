@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_course_form" model="ir.ui.view">
+            <field name="name">elearning.course.form</field>
+            <field name="model">elearning.course</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="school_name"/>
+                                <field name="level"/>
+                                <field name="academic_year"/>
+                                <field name="semester"/>
+                            </group>
+                            <group>
+                                <field name="faculty"/>
+                                <field name="department"/>
+                                <field name="course_title"/>
+                                <field name="course_code "/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_course_search" model="ir.ui.view">
+            <field name="name">elearning.course.search</field>
+            <field name="model">elearning.course</field>
+            <field name="arch" type="xml">
+                <search string="Course Form">
+                    <field name="course_title"/>
+                    <field name="course_code "/>
+                </search>
+            </field>
+        </record>
+
+         <record id="view_course_kanban" model="ir.ui.view">
+            <field name="name">elearning.course.kanban</field>
+            <field name="model">elearning.course</field>
+            <field name="arch" type="xml">
+                <kanban string="Course Form">
+                    <field name="id"/>
+                    <field name="school_name"/>
+                    <field name="level"/>
+                    <field name="academic_year"/>
+                    <field name="semester"/>
+                    <field name="faculty"/>
+                    <field name="department"/>
+                    <field name="course_title"/>
+                    <field name="course_code "/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            School Name: <field name="school_name"/>
+                                        </li>
+                                        <li>
+                                            Level: <field name="level"/>
+                                        </li>
+                                        <li>
+                                            Academic Year: <field name="academic_year"/>
+                                        </li>
+                                        <li>
+                                            Semester: <field name="semester"/>
+                                        </li>
+                                        <li>
+                                            Faculty: <field name="faculty"/>
+                                        </li>
+                                        <li>
+                                            Department: <field name="department"/>
+                                        </li>
+                                        <li>
+                                            Course Title: <field name="course_title"/>
+                                        </li>
+                                        <li>
+                                            Course Code: <field name="course_code "/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <menuitem id="e_learning_menu" name="E-learning" sequence="0" />
+        <menuitem id="course_form" parent="e_learning_menu" name="Course Form" action="view_course_form" sequence="0" />
+
+    </data>
+</odoo>
